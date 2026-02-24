@@ -1,0 +1,250 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .result-overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    .exit-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      .exit-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 40px;
+        button {
+          font-family: "Roboto Mono";
+          font-size: 32px;
+          color: rgba(255,255,255,0.5);
+          background: none;
+          border: none;
+        }
+      }
+    }
+
+    .center-grid {
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-rows: 90% 10%;
+      grid-template-columns: 100%;
+
+
+      .text-area-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        textarea {
+          width: 80%;
+          height: 80%;
+          padding: 40px;
+
+          border-radius: 30px;
+          background-color: rgba(201, 201, 201, 0.5);
+
+          color: #FFFFFF;
+          font-size: 32px;
+
+          overflow-y: scroll;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+  }
+
+  .navbar {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    padding: 0;
+
+    .logo {
+      display: inline-flex;
+      font-size: 4vh;
+      font-family: 'Roboto Mono';
+      text-stroke: 1vh;
+      color: #EC5228;
+      padding: 2vh;
+    }
+
+    .google-logo {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      justify-items: center;
+      align-items: center;
+      justify-content: flex-end;
+      height:100%;
+      margin-right: 1.5rem;
+
+      .google-logo-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 1rem;
+        font-family: 'Roboto Mono';
+        color: #8a8884;
+        opacity: 0.6;
+      }
+
+      img {
+        height: 2%;
+        width: 2%;
+      }
+
+    }
+
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    >* {
+      padding: 1.5rem;
+      font-family: "Roboto Mono";
+      color: #8a8884;
+      opacity: 0.7;
+    }
+  }
+
+
+  .content > * { //anything within the content window will have 2vh margin because why not
+    margin: 2vh;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .cat {
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .cat img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .instruction {
+      font-size: 4vh;
+      font-family: 'Roboto Mono';
+      text-stroke: 1vh;
+      color: #EC5228;
+    }
+
+
+    .input-window {
+      //layout settings
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      //window stuff
+      border: solid 1px;
+      border-radius: 15px;
+      background: #3F7D58;
+      width: 65vh;
+      height: 15vh;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+      //all i/o stuff here
+      .input-window-io-area {
+        //layouting
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        //content
+        .input-window-text-area {
+          width: 90%;
+          height: auto;
+        }
+
+        .input-window-text-area textarea::placeholder {
+          opacity: 0.6;
+          color: #ffffff;
+        }
+
+
+        .input-window-text-area textarea {
+          //sizing
+          width: 100%;
+          height: auto;
+          //textarea stuff
+          min-height: 1em;
+          max-height: 3em;
+          overflow-y: auto;
+          resize: none;
+          //invisible wow!
+          object-fit: cover;
+          background: none;
+          border: none;
+          outline: none;
+          box-shadow: none;
+          //text stuff
+          font-family: 'Roboto Mono';
+          font-size: 2vh;
+          color: #ffffff;
+
+        }
+
+        .input-window-buttons {
+          width: 90%;
+          margin-top: 5px;
+        }
+
+        .input-window-buttons button {
+          //layouting stuff
+          width: 9vh;
+          height: 4vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          //effects
+          border-radius: 15px;
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          background: #3F7D58;
+          border: 1px solid;
+        }
+        .input-window-buttons img {
+          width: 50%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+

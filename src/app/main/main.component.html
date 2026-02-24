@@ -1,0 +1,8 @@
+<button (click)="setView('home')">Click here to start</button>
+<div *ngIf="currentView === 'home'">
+    <h3>Hello, this is home</h3>
+</div>
+
+<div *ngIf="currentView === 'upload'">
+    <h3>Hello, this is upload</h3>
+</div>

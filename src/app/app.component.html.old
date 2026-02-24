@@ -1,0 +1,44 @@
+<div *ngIf="currentView === 'home'">
+    <h3>Choose your input type</h3>
+    <button (click)="setView('image_upload')">Upload a file</button>
+    <button (click)="setView('text_upload')">Text input</button>
+</div>
+
+<div *ngIf="currentView === 'image_upload'">
+    <h1>Upload to get started</h1>
+    <input type="file" (change)="onFileChange($event)" />
+    <button (click)="setView('home')">Go back</button>
+</div>
+
+<div *ngIf="currentView === 'text_upload'">
+    <h1>Enter your text</h1>
+    <input type="text" [(ngModel)]="textInput" />
+    <button (click)="uploadText()">Enter</button>
+    <button (click)="setView('home')">Go back</button>
+</div>
+
+<div *ngIf="currentView === 'image_uploaded'">
+    <h1>Uploaded</h1>
+    <h3>Proceed to generation?</h3>
+    <button (click)="setView('upload')">Upload again</button>
+    <button (click)="startImageReadAndInference()">Proceed</button>
+</div>
+
+<div *ngIf="currentView === 'text_uploaded'">
+    <h1>Text upload successful</h1>
+    <h3>Proceed to generation?</h3>
+    <button (click)="setView('text_upload')">New text input</button>
+    <button (click)="startTextInference()">Proceed</button>
+</div>
+
+<div *ngIf="currentView === 'loading'">
+    <h1>Loading...</h1>
+</div>
+
+<div *ngIf="currentView === 'results'">
+    <div *ngFor="let question of questions">
+        <pre>{{ question }}</pre>
+    </div>
+    <button (click)="resetAndUploadAgain()">Upload again</button>
+</div>
+
